@@ -10,23 +10,28 @@ package cuentas;
 public class EDTarea4 {
 
     public static void main(String[] args) {
-       CCuenta cuenta1;
-        double saldoActual;
+       CCuenta cuenta1 = new CCuenta("Antonio López", "1000-2365-85-1230456789", 2500, 0);
+        
+        operativa_cuenta(cuenta1);
+    }
 
-        cuenta1 = new CCuenta("Antonio López","1000-2365-85-1230456789",2500,0);
-        saldoActual = cuenta1.estado();
-        System.out.println("El saldo actual es"+ saldoActual );
+    
+    public static void operativa_cuenta(CCuenta cuenta) {
+        System.out.println("El saldo actual es: " + cuenta.estado());
 
         try {
-            cuenta1.retirar(2300);
+            cuenta.retirar(2300);
+            System.out.println("Retiro realizado. Nuevo saldo: " + cuenta.estado());
         } catch (Exception e) {
-            System.out.print("Fallo al retirar");
+            System.out.println("Fallo al retirar: " + e.getMessage());
         }
+
         try {
-            System.out.println("Ingreso en cuenta");
-            cuenta1.ingresar(695);
+            System.out.println("Ingreso en cuenta...");
+            cuenta.ingresar(695);
+            System.out.println("Ingreso realizado. Nuevo saldo: " + cuenta.estado());
         } catch (Exception e) {
-            System.out.print("Fallo al ingresar");
+            System.out.println("Fallo al ingresar: " + e.getMessage());
         }
     }
 }
