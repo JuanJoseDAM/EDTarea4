@@ -12,11 +12,11 @@ public class EDTarea4 {
     public static void main(String[] args) {
        CCuenta cuenta1 = new CCuenta("Antonio López", "1000-2365-85-1230456789", 2500, 0);
         
-        operativa_cuenta(cuenta1);
+        operativa_cuenta(cuenta1, 100);
     }
 
     
-    public static void operativa_cuenta(CCuenta cuenta) {
+    public static void operativa_cuenta(CCuenta cuenta, float cantidad) {
         System.out.println("El saldo actual es: " + cuenta.estado());
 
         try {
@@ -28,7 +28,7 @@ public class EDTarea4 {
 
         try {
             System.out.println("Ingreso en cuenta...");
-            cuenta.ingresar(695);
+            cuenta.ingresar(cantidad);
             System.out.println("Ingreso realizado. Nuevo saldo: " + cuenta.estado());
         } catch (Exception e) {
             System.out.println("Fallo al ingresar: " + e.getMessage());
