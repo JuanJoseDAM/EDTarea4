@@ -2,8 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.edtarea4;
-import cuentas.CCuenta;
+package cuentas;
 /**
  *
  * @author juanj
